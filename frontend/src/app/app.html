@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h1 class="title">Lista de Peliculas</h1>
+  <p class="subtitle">Registra y consulta tus peliculas favoritas</p>
+
+  <div class="form-row">
+    <input
+      type="text"
+      class="input"
+      placeholder="Escribe el nombre de la pelicula..."
+      [(ngModel)]="newTitle"
+      (keyup.enter)="addMovie()"
+    />
+    <button class="btn" (click)="addMovie()" [disabled]="loading || !newTitle.trim()">
+      {{ loading ? 'Guardando...' : 'Anadir' }}
+    </button>
+  </div>
+
+  <div class="list" *ngIf="movies.length > 0; else empty">
+    <div class="list-item" *ngFor="let movie of movies">
+      <span class="movie-title">{{ movie.title }}</span>
+      <span class="movie-date">{{ movie.created_at | date:'short' }}</span>
+    </div>
+  </div>
+
+  <ng-template #empty>
+    <div class="empty-state">
+      <p>Todavia no hay peliculas. Anade la primera!</p>
+    </div>
+  </ng-template>
+
+</div>
