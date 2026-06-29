@@ -20,7 +20,6 @@ EjercicioLaravelAngular/
 │       ├── app.component.ts             # Lógica del componente
 │       ├── app.component.html           # Vista
 │       └── app.component.css            # Estilos
-├── guia_pdf_Juan_Soto_Ejercicios_2.md   # Esquema para el PDF de entrega
 └── README.md
 ```
 
